@@ -58,16 +58,48 @@ public class ClientesServiceImpl implements ClientesService {
 
     @Override
     public Optional<ClientesDto> buscarCliente(Long id) {
-        return Optional.empty();
+        Optional<ClientesEntity> entity = this.repository.findById(id);
+
+        return entity.map(clientesEntity -> {
+            return ClientesDto.builder()
+                    .nombre(clientesEntity.getNombre())
+                    .direccion(clientesEntity.getDireccion())
+                    .correo(clientesEntity.getCorreo())
+                    .telefono(clientesEntity.getTelefono())
+                    .comentario(clientesEntity.getComentario())
+                    .build();
+        });
     }
 
     @Override
     public ClientesDto actualizarCliente(ClientesDto requestCliente, Long id) {
-        return null;
+        ClientesEntity entity = ClientesEntity.builder()
+                .idClientes(id)
+                .nombre(requestCliente.getNombre())
+                .correo(requestCliente.getCorreo())
+                .direccion(requestCliente.getDireccion())
+                .comentario(requestCliente.getComentario())
+                .telefono(requestCliente.getTelefono())
+                .build();
+        ClientesEntity clientesEntity= this.repository.save(entity);
+        return ClientesDto.builder()
+                .nombre(clientesEntity.getNombre())
+                .direccion(clientesEntity.getDireccion())
+                .correo(clientesEntity.getCorreo())
+                .telefono(clientesEntity.getTelefono())
+                .comentario(entity.getComentario())
+                .build();
     }
 
     @Override
     public String eliminarCliente(Long id) {
-        return null;
+        String response="";
+        try {
+            this.repository.deleteById(id);
+            response="Cliente eliminado";
+        }catch (Exception e){
+            response= "Error al eliminar el cliente";
+        }
+        return response;
     }
 }
