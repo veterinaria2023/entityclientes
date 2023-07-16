@@ -2,10 +2,7 @@ package com.veterinaria.entityClientes.controller;
 
 import com.veterinaria.entityClientes.dto.ClientesDto;
 import com.veterinaria.entityClientes.service.ClientesService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,5 +25,20 @@ public class ClienteController {
     @GetMapping("/buscarCliente")
     public Optional<ClientesDto> clientesDto(@RequestParam("id") Long id){
         return this.service.buscarCliente(id);
+    }
+
+    @PostMapping("/guardarCliente")
+    public ClientesDto guardarCliente(@RequestBody ClientesDto requestClinete){
+        return this.service.guardarCliente(requestClinete);
+    }
+
+    @PostMapping("/actualizarCliete")
+    public ClientesDto actualizarCliente(@RequestBody ClientesDto requestClinte, Long id){
+        return this.service.actualizarCliente(requestClinte, id);
+    }
+
+    @GetMapping("/eliminarCliente")
+    public String eliminarCliente(@RequestParam("id") Long id){
+        return this.service.eliminarCliente(id);
     }
 }
