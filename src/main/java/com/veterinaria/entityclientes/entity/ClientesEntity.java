@@ -1,12 +1,15 @@
-package com.veterinaria.entityClientes.entity;
+package com.veterinaria.entityclientes.entity;
 
 
-import lombok.AllArgsConstructor;
+
+
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+
+
 
 @Entity
 @Table(name = "clientes", schema = "veterinaria")

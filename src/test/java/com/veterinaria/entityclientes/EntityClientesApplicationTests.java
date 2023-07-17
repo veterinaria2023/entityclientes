@@ -1,4 +1,4 @@
-package com.veterinaria.entityClientes;
+package com.veterinaria.entityclientes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
