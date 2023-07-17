@@ -1,4 +1,4 @@
-package com.veterinaria.entityClientes.dto;
+package com.veterinaria.entityclientes.dto;
 
 
 import lombok.AllArgsConstructor;
