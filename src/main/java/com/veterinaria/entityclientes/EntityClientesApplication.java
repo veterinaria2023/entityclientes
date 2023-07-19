@@ -1,7 +1,8 @@
-package com.veterinaria.entityClientes;
+package com.veterinaria.entityclientes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class EntityClientesApplication {
