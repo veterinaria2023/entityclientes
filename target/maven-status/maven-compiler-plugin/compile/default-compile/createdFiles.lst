@@ -1,0 +1,9 @@
+com\veterinaria\entityclientes\entity\ClientesEntity.class
+com\veterinaria\entityclientes\repository\ClientesRepository.class
+com\veterinaria\entityclientes\entity\ClientesEntity$ClientesEntityBuilder.class
+com\veterinaria\entityclientes\EntityClientesApplication.class
+com\veterinaria\entityclientes\dto\ClientesDto$ClientesDtoBuilder.class
+com\veterinaria\entityclientes\service\ClientesService.class
+com\veterinaria\entityclientes\controller\ClienteController.class
+com\veterinaria\entityclientes\dto\ClientesDto.class
+com\veterinaria\entityclientes\service\impl\ClientesServiceImpl.class
